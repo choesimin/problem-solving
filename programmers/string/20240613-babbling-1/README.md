@@ -1,4 +1,4 @@
-# 옹알이 (1)
+# 옹알이(1)
 
 <https://school.programmers.co.kr/learn/courses/17584/17584-내일은-코딩테스트-with-파이썬자료구조와-알고리즘의-기초부터-실전까지>
 
