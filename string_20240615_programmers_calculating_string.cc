@@ -1,16 +1,17 @@
+/*
 # 문자열 계산하기
 
 <https://school.programmers.co.kr/learn/courses/17584/17584-내일은-코딩테스트-with-파이썬자료구조와-알고리즘의-기초부터-실전까지>
 
 ---
 
-## 문제 설명
+# 문제 설명
 
 `my_string`은 "3 + 5"처럼 문자열로 된 수식입니다. 문자열 `my_string`이 매개변수로 주어질 때, 수식을 계산한 값을 return 하는 solution 함수를 완성해주세요.
 
 ---
 
-## 제한사항
+# 제한사항
 
 - 연산자는 +, -만 존재합니다.
 - 문자열의 시작과 끝에는 공백이 없습니다.
@@ -26,7 +27,7 @@
 
 ---
 
-## 입출력 예
+# 입출력 예
 
 | my_string | result |
 | --- | --- |
@@ -34,8 +35,56 @@
 
 ---
 
-## 입출력 예 설명
+# 입출력 예 설명
 
-### 입출력 예 #1
+## 입출력 예 #1
 
 - 3 + 4 = 7을 return 합니다.
+
+*/
+
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(string my_string) {
+  istringstream stream(my_string);
+  vector<string> tokens;
+  string token;
+
+  // 공백 기준으로 문자열 분리
+  while (stream >> token) {
+    tokens.push_back(token);
+  }
+
+  // 첫 번째 숫자를 초기 값으로 설정
+  int answer = stoi(tokens[0]);
+
+  // 두 번째 요소부터 차례대로 '연산자를 확인'하고, '숫자를 연산'하기
+  for (size_t i = 1; i < tokens.size(); i += 2) {
+    string op = tokens[i];
+    int number = stoi(tokens[i + 1]);
+
+    if (op == "+") {
+      answer += number;
+    } else if (op == "-") {
+      answer -= number;
+    }
+  }
+
+  return answer;
+}
+
+int main() {
+  string my_string = "3 + 4";
+  int result = solution(my_string);
+  cout << result << endl;
+}

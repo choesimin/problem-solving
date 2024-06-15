@@ -1,16 +1,17 @@
+/*
 # 숨어있는 숫자의 덧셈(2)
 
 <https://school.programmers.co.kr/learn/courses/17584/17584-내일은-코딩테스트-with-파이썬자료구조와-알고리즘의-기초부터-실전까지>
 
 ---
 
-## 문제 설명
+# 문제 설명
 
 문자열 `my_string`이 매개변수로 주어집니다. `my_string`은 소문자, 대문자, 자연수로만 구성되어있습니다. `my_string`안의 자연수들의 합을 return하도록 solution 함수를 완성해주세요.
 
 ---
 
-## 제한사항
+# 제한사항
 
 - 1 ≤ `my_string`의 길이 ≤ 1,000
 - 1 ≤ `my_string` 안의 자연수 ≤ 1000
@@ -20,7 +21,7 @@
 
 ---
 
-## 입출력 예
+# 입출력 예
 
 | my_string | result |
 | --- | --- |
@@ -29,12 +30,50 @@
 
 ---
 
-## 입출력 예 설명
+# 입출력 예 설명
 
-### 입출력 예 #1
+## 입출력 예 #1
 
 - "aAb1B2cC34oOp"안의 자연수는 1, 2, 34 입니다. 따라서 1 + 2 + 34 = 37 을 return합니다.
 
-### 입출력 예 #2
+## 입출력 예 #2
 
 - "1a2b3c4d123Z"안의 자연수는 1, 2, 3, 4, 123 입니다. 따라서 1 + 2 + 3 + 4 + 123 = 133 을 return합니다.
+
+*/
+
+#include <cctype>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int solution(string my_string) {
+  int answer = 0;
+  string temp = "";
+
+  for (char ch : my_string) {
+    if (isdigit(ch)) {
+      temp += ch;
+    } else {
+      if (!temp.empty()) {
+        answer += stoi(temp);
+        temp = "";
+      }
+    }
+  }
+
+  if (!temp.empty()) {
+    answer += stoi(temp);
+  }
+
+  return answer;
+}
+
+int main() {
+  string test1 = "aAb1B2cC34oOp";
+  string test2 = "1a2b3c4d123Z";
+
+  cout << solution(test1) << endl;
+  cout << solution(test2) << endl;
+}
