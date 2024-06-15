@@ -1,5 +1,5 @@
 git status
-git add *.cc
+git add *.cc *.sh
 git commit -m "Update"
 git push origin master
 git clean -f
