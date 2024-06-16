@@ -57,39 +57,38 @@ using namespace std;
 
 int solution(vector<string> babbling)
 {
-  int answer = 0;
-  vector<string> patterns = {"aya", "ye", "woo", "ma"};
+    int answer = 0;
+    vector<string> patterns = {"aya", "ye", "woo", "ma"};
 
-  // 각 문자열에 대해 반복
-  for (string word : babbling)
-  {
-    // 각 패턴에 대해 반복
-    for (string pattern : patterns)
+    for (string word : babbling)
     {
-      size_t position = word.find(pattern); // 패턴이 나타나는 위치 찾기
-      while (position != string::npos)
-      {                                              // 패턴이 존재하는 동안 반복
-        word.replace(position, pattern.size(), " "); // 패턴을 공백으로 대체함
-        position = word.find(pattern);               // 다음 패턴 위치를 찾기
-      }
+        for (string pattern : patterns)
+        {
+            // pattern이 처음 나타나는 위치 찾기
+            size_t position = word.find(pattern);
+
+            // 패턴이 존재하면 패턴을 공백으로 바꾸고 다음 위치를 찾아 공백으로 바꾸는 작업을 반복함
+            while (position != string::npos)
+            {
+                word.replace(position, pattern.size(), " ");
+                position = word.find(pattern);
+            }
+        }
+
+        // 공백 문자 모두 제거했을 때, 문자열이 비어 있으면 모두 pattern이었던 것이므로 결과 값을 증가시킴
+        word.erase(remove(word.begin(), word.end(), ' '), word.end());
+        if (word.empty())
+        {
+            answer++;
+        }
     }
 
-    // 공백 문자 모두 제거하기
-    word.erase(remove(word.begin(), word.end(), ' '), word.end());
-
-    // 문자열이 비어 있으면 결과 값을 증가시킴
-    if (word.empty())
-    {
-      answer++;
-    }
-  }
-
-  return answer; // 최종 결과 반환
+    return answer;
 }
 
 int main()
 {
-  vector<string> babbling = {"ayaye", "uuuma", "ye", "yemawoo", "ayaa"};
-  int answer = solution(babbling);
-  cout << answer << endl;
+    vector<string> babbling = {"ayaye", "uuuma", "ye", "yemawoo", "ayaa"};
+    int answer = solution(babbling);
+    cout << answer << endl;
 }
