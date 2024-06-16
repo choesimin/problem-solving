@@ -74,7 +74,7 @@ int solution(vector<string> babbling)
             }
         }
 
-        // 공백을 모두 제거했을 때, 남는 문자가 없다면 모두 pattern이었던 것이므로 발음이 가능함
+        // 단어에서 공백을 모두 제거했을 때 남는 문자가 없다면, 그 단어는 가능한 발음으로만 이루어진 단어임
         word.erase(remove(word.begin(), word.end(), ' '), word.end());
         if (word.empty())
         {
