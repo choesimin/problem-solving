@@ -73,7 +73,6 @@ int main()
     string result1 = solution(test1, num1_1, num2_1);
     cout << result1 << endl;
 
-    // 테스트 케이스 2
     string test2 = "I love you";
     int num1_2 = 3;
     int num2_2 = 6;
