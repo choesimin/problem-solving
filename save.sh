@@ -1,4 +1,5 @@
 git add *.cc *.sh
+git add -u
 git commit -m "Update"
 git push origin master
 git clean -f
