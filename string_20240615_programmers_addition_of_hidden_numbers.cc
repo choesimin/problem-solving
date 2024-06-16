@@ -53,7 +53,7 @@ int solution(string my_string)
     int answer = 0;
     string temp = "";
 
-    // 문자열에서 숫자를 찾아서 더하는 작업을 반복하기
+    // 문자열에서 숫자를 찾아 더하는 작업 반복
     for (char ch : my_string)
     {
         if (isdigit(ch))
