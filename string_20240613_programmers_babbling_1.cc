@@ -58,24 +58,23 @@ using namespace std;
 int solution(vector<string> babbling)
 {
     int answer = 0;
-    vector<string> patterns = {"aya", "ye", "woo", "ma"};
+    vector<string> valid_sounds = {"aya", "ye", "woo", "ma"};
 
     for (string word : babbling)
     {
-        for (string pattern : patterns)
+        // 가능한 발음들을 모두 공백으로 바꾸기
+        for (string sound : valid_sounds)
         {
-            // pattern이 처음 나타나는 위치 찾기
-            size_t position = word.find(pattern);
+            size_t pos = word.find(sound);
 
-            // 패턴이 존재하면 패턴을 공백으로 바꾸고 다음 위치를 찾아 공백으로 바꾸는 작업을 반복함
-            while (position != string::npos)
+            while (pos != string::npos)
             {
-                word.replace(position, pattern.size(), " ");
-                position = word.find(pattern);
+                word.replace(pos, sound.size(), " ");
+                pos = word.find(sound);
             }
         }
 
-        // 공백 문자 모두 제거했을 때, 문자열이 비어 있으면 모두 pattern이었던 것이므로 결과 값을 증가시킴
+        // 공백을 모두 제거했을 때, 남는 문자가 없다면 모두 pattern이었던 것이므로 발음이 가능함
         word.erase(remove(word.begin(), word.end(), ' '), word.end());
         if (word.empty())
         {
@@ -88,7 +87,11 @@ int solution(vector<string> babbling)
 
 int main()
 {
-    vector<string> babbling = {"ayaye", "uuuma", "ye", "yemawoo", "ayaa"};
-    int answer = solution(babbling);
-    cout << answer << endl;
+    vector<string> test1 = {"aya", "yee", "u", "maa", "wyeoo"};
+    int result1 = solution(test1);
+    cout << result1 << endl;
+
+    vector<string> test2 = {"ayaye", "uuuma", "ye", "yemawoo", "ayaa"};
+    int result2 = solution(test2);
+    cout << result2 << endl;
 }
