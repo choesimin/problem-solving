@@ -80,6 +80,4 @@ int main()
     string test2 = "205";
     string result2 = solution(test2);
     cout << result2 << endl;
-
-    return 0;
 }
