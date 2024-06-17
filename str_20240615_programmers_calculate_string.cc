@@ -66,7 +66,7 @@ int solution(string my_string)
     int answer = stoi(tokens[0]);
 
     // 두 번째 요소부터 차례대로 연산자를 확인하고 숫자 연산하기
-    for (size_t i = 1; i < tokens.size(); i += 2)
+    for (int i = 1; i < tokens.size(); i += 2)
     {
         string op = tokens[i];
         int number = stoi(tokens[i + 1]);

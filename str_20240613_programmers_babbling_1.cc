@@ -65,7 +65,7 @@ int solution(vector<string> babbling)
         // 가능한 발음들을 모두 공백으로 바꾸기
         for (string sound : valid_sounds)
         {
-            size_t pos = word.find(sound);
+            int pos = word.find(sound);
 
             while (pos != string::npos)
             {

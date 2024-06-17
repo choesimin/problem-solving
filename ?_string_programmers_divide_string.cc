@@ -59,9 +59,26 @@ using namespace std;
 int solution(string s)
 {
     int answer = 0;
+
+    char x = s[0];
+
+    for (int i = 0; i < s.size(); i++)
+    {
+        cout << x << endl;
+        cout << s[i] << endl;
+    }
+
     return answer;
 }
 
 int main()
 {
+    string test1 = "banana";
+    cout << solution(test1) << endl;
+
+    // string test2 = "abracadabra";
+    // cout << solution(test2) << endl;
+
+    // string test3 = "aaabbaccccabba";
+    // cout << solution(test3) << endl;
 }
