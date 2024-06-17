@@ -66,6 +66,11 @@ int solution(string s)
     {
         cout << x << endl;
         cout << s[i] << endl;
+
+        if (x == s[i])
+        {
+            cout << x << s[i] << endl;
+        }
     }
 
     return answer;
@@ -76,9 +81,9 @@ int main()
     string test1 = "banana";
     cout << solution(test1) << endl;
 
-    // string test2 = "abracadabra";
-    // cout << solution(test2) << endl;
+    string test2 = "abracadabra";
+    cout << solution(test2) << endl;
 
-    // string test3 = "aaabbaccccabba";
-    // cout << solution(test3) << endl;
+    string test3 = "aaabbaccccabba";
+    cout << solution(test3) << endl;
 }
