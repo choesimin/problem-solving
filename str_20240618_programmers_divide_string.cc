@@ -61,16 +61,34 @@ int solution(string s)
     int answer = 0;
 
     char x = s[0];
+    int count_x = 0;
+    int count_other = 0;
 
     for (int i = 0; i < s.size(); i++)
     {
-        cout << x << endl;
-        cout << s[i] << endl;
-
         if (x == s[i])
         {
-            cout << x << s[i] << endl;
+            count_x++;
         }
+        else
+        {
+            count_other++;
+        }
+
+        // x와 같은 문자 갯수와 x와 다른 문자 갯수가 같아지는 순간 세기
+        if (count_x == count_other)
+        {
+            answer++;
+            count_x = 0;
+            count_other = 0;
+            x = s[i + 1];
+        }
+    }
+
+    // 짜투리로 남은 문자열도 세기
+    if (count_x != count_other)
+    {
+        answer++;
     }
 
     return answer;
