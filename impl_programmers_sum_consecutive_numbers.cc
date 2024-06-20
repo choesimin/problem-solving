@@ -57,7 +57,7 @@
 
 */
 
-#include <string>
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -65,9 +65,35 @@ using namespace std;
 vector<int> solution(int num, int total)
 {
     vector<int> answer;
+
+    // 등차수열의 합 공식 : S = n/2 * (2a + (n - 1)d)
+    // 변수 이름으로 바꾼 공식 : total = num/2 * (2start + (num - 1)1)
+    // 시작 숫자 구하는 공식 : start = (2 * total / num - num + 1) / 2
+    int start = (2 * total / num - num + 1) / 2;
+
+    for (int i = 0; i < num; i++)
+    {
+        answer.push_back(start + i);
+    }
+
     return answer;
+}
+
+int print(vector<int> result)
+{
+    for (int res : result)
+    {
+        cout << res << " ";
+    }
+    cout << endl;
+
+    return 0;
 }
 
 int main()
 {
+    print(solution(3, 12));
+    print(solution(5, 15));
+    print(solution(4, 14));
+    print(solution(5, 5));
 }
