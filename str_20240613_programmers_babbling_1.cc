@@ -87,11 +87,9 @@ int solution(vector<string> babbling)
 
 int main()
 {
-    vector<string> test1 = {"aya", "yee", "u", "maa", "wyeoo"};
-    int result1 = solution(test1);
-    cout << result1 << endl;
+    vector<string> babbling1 = {"aya", "yee", "u", "maa", "wyeoo"};
+    cout << solution(babbling1) << endl;
 
-    vector<string> test2 = {"ayaye", "uuuma", "ye", "yemawoo", "ayaa"};
-    int result2 = solution(test2);
-    cout << result2 << endl;
+    vector<string> babbling2 = {"ayaye", "uuuma", "ye", "yemawoo", "ayaa"};
+    cout << solution(babbling2) << endl;
 }

@@ -53,50 +53,49 @@ using namespace std;
 
 vector<string> solution(vector<string> quiz)
 {
-  vector<string> answer;
+    vector<string> answer;
 
-  for (string q : quiz)
-  {
-    // 수식을 구성하는 요소들 추출하기
-    stringstream ss(q);
-    int X, Y, Z;
-    char op, eq;
-    ss >> X >> op >> Y >> eq >> Z;
-
-    // 연산자에 따라 계산하기
-    int result = (op == '+') ? X + Y : X - Y;
-
-    // 계산 결과 확인하기
-    if (result == Z)
+    for (string q : quiz)
     {
-      answer.push_back("O");
-    }
-    else
-    {
-      answer.push_back("X");
-    }
-  }
+        // 수식을 구성하는 요소들 추출하기
+        stringstream ss(q);
+        int X, Y, Z;
+        char op, eq;
+        ss >> X >> op >> Y >> eq >> Z;
 
-  return answer;
+        // 연산자에 따라 계산하기
+        int result = (op == '+') ? X + Y : X - Y;
+
+        // 계산 결과 확인하기
+        if (result == Z)
+        {
+            answer.push_back("O");
+        }
+        else
+        {
+            answer.push_back("X");
+        }
+    }
+
+    return answer;
+}
+
+int print(vector<string> result)
+{
+    for (string res : result)
+    {
+        cout << res << " ";
+    }
+    cout << endl;
+
+    return 0;
 }
 
 int main()
 {
-  vector<string> quiz1 = {"3 - 4 = -3", "5 + 6 = 11"};
-  vector<string> quiz2 = {"19 - 6 = 13", "5 + 66 = 71", "5 - 15 = 63", "3 - 1 = 2"};
+    vector<string> quiz1 = {"3 - 4 = -3", "5 + 6 = 11"};
+    print(solution(quiz1));
 
-  vector<string> result1 = solution(quiz1);
-  vector<string> result2 = solution(quiz2);
-
-  for (string res : result1)
-  {
-    cout << res << " ";
-  }
-  cout << endl;
-
-  for (string res : result2)
-  {
-    cout << res << " ";
-  }
-  cout << endl;
+    vector<string> quiz2 = {"19 - 6 = 13", "5 + 66 = 71", "5 - 15 = 63", "3 - 1 = 2"};
+    print(solution(quiz2));
 }

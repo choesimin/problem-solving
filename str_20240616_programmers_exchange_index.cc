@@ -59,15 +59,13 @@ string solution(string my_string, int num1, int num2)
 
 int main()
 {
-    string test1 = "hello";
+    string my_string_1 = "hello";
     int num1_1 = 1;
     int num2_1 = 2;
-    string result1 = solution(test1, num1_1, num2_1);
-    cout << result1 << endl;
+    cout << solution(my_string_1, num1_1, num2_1) << endl;
 
-    string test2 = "I love you";
+    string my_string_2 = "I love you";
     int num1_2 = 3;
     int num2_2 = 6;
-    string result2 = solution(test2, num1_2, num2_2);
-    cout << result2 << endl;
+    cout << solution(my_string_2, num1_2, num2_2) << endl;
 }

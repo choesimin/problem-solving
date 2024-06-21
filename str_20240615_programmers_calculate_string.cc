@@ -87,6 +87,5 @@ int solution(string my_string)
 int main()
 {
     string my_string = "3 + 4";
-    int result = solution(my_string);
-    cout << result << endl;
+    cout << solution(my_string) << endl;
 }

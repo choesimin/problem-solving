@@ -96,12 +96,12 @@ int solution(string s)
 
 int main()
 {
-    string test1 = "banana";
-    cout << solution(test1) << endl;
+    string s1 = "banana";
+    cout << solution(s1) << endl;
 
-    string test2 = "abracadabra";
-    cout << solution(test2) << endl;
+    string s2 = "abracadabra";
+    cout << solution(s2) << endl;
 
-    string test3 = "aaabbaccccabba";
-    cout << solution(test3) << endl;
+    string s3 = "aaabbaccccabba";
+    cout << solution(s3) << endl;
 }

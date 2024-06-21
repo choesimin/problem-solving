@@ -85,23 +85,19 @@ int solution(string A, string B)
 
 int main()
 {
-    string test1_A = "hello";
-    string test1_B = "ohell";
-    int result1 = solution(test1_A, test1_B);
-    cout << result1 << endl;
+    string A1 = "hello";
+    string B1 = "ohell";
+    cout << solution(A1, B1) << endl;
 
-    string test2_A = "apple";
-    string test2_B = "elppa";
-    int result2 = solution(test2_A, test2_B);
-    cout << result2 << endl;
+    string A2 = "apple";
+    string B2 = "elppa";
+    cout << solution(A2, B2) << endl;
 
-    string test3_A = "atat";
-    string test3_B = "tata";
-    int result3 = solution(test3_A, test3_B);
-    cout << result3 << endl;
+    string A3 = "atat";
+    string B3 = "tata";
+    cout << solution(A3, B3) << endl;
 
-    string test4_A = "abc";
-    string test4_B = "abc";
-    int result4 = solution(test4_A, test4_B);
-    cout << result4 << endl;
+    string A4 = "abc";
+    string B4 = "abc";
+    cout << solution(A4, B4) << endl;
 }

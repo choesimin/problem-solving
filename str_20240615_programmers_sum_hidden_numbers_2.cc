@@ -80,9 +80,6 @@ int solution(string my_string)
 
 int main()
 {
-    string test1 = "aAb1B2cC34oOp";
-    string test2 = "1a2b3c4d123Z";
-
-    cout << solution(test1) << endl;
-    cout << solution(test2) << endl;
+    cout << solution("aAb1B2cC34oOp") << endl;
+    cout << solution("1a2b3c4d123Z") << endl;
 }

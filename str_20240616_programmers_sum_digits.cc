@@ -58,11 +58,9 @@ int solution(int n)
 
 int main()
 {
-    int test1 = 1234;
-    int result1 = solution(test1);
-    cout << result1 << endl;
+    int n1 = 1234;
+    cout << solution(n1) << endl;
 
-    int test2 = 930211;
-    int result2 = solution(test2);
-    cout << result2 << endl;
+    int n2 = 930211;
+    cout << solution(n2) << endl;
 }
