@@ -125,9 +125,9 @@ vector<int> solution(vector<int> lottos, vector<int> win_nums)
 
 int print(vector<int> result)
 {
-    for (int res : result)
+    for (int num : result)
     {
-        cout << res << " ";
+        cout << num << " ";
     }
     cout << endl;
 

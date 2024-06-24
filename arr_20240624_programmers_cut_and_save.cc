@@ -69,9 +69,9 @@ vector<string> solution(string my_str, int n)
 int print(vector<string> result)
 {
 
-    for (string res : result)
+    for (string str : result)
     {
-        cout << res << " ";
+        cout << str << " ";
     }
     cout << endl;
 

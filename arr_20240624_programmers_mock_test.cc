@@ -48,17 +48,60 @@
 
 */
 
-#include <string>
 #include <vector>
+#include <algorithm>
+#include <iostream>
 
 using namespace std;
 
 vector<int> solution(vector<int> answers)
 {
     vector<int> answer;
+
+    vector<int> pattern1 = {1, 2, 3, 4, 5};
+    vector<int> pattern2 = {2, 1, 2, 3, 2, 4, 2, 5};
+    vector<int> pattern3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
+
+    // 각 수포자의 정답 수
+    vector<int> score(3, 0);
+
+    // 채점하기
+    for (int i = 0; i < answers.size(); ++i)
+    {
+        if (answers[i] == pattern1[i % pattern1.size()])
+            score[0]++;
+        if (answers[i] == pattern2[i % pattern2.size()])
+            score[1]++;
+        if (answers[i] == pattern3[i % pattern3.size()])
+            score[2]++;
+    }
+
+    // 최고 점수 구하기
+    int max_score = *max_element(score.begin(), score.end());
+
+    // 최고 점수 맞은 사람 구하기
+    for (int i = 0; i < score.size(); i++)
+    {
+        if (score[i] == max_score)
+        {
+            answer.push_back(i + 1);
+        }
+    }
+
     return answer;
+}
+
+void print(const vector<int> &result)
+{
+    for (int num : result)
+    {
+        cout << num << " ";
+    }
+    cout << endl;
 }
 
 int main()
 {
+    print(solution({1, 2, 3, 4, 5}));
+    print(solution({1, 3, 2, 4, 2}));
 }

@@ -82,9 +82,9 @@ vector<string> solution(vector<string> quiz)
 
 int print(vector<string> result)
 {
-    for (string res : result)
+    for (string str : result)
     {
-        cout << res << " ";
+        cout << str << " ";
     }
     cout << endl;
 

@@ -81,9 +81,9 @@ vector<int> solution(int num, int total)
 
 int print(vector<int> result)
 {
-    for (int res : result)
+    for (int num : result)
     {
-        cout << res << " ";
+        cout << num << " ";
     }
     cout << endl;
 
