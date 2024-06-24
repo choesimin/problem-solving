@@ -80,9 +80,6 @@ int print(vector<string> result)
 
 int main()
 {
-    vector<string> result1 = solution("abc1Addfggg4556b", 6);
-    print(result1);
-
-    vector<string> result2 = solution("abcdef123", 3);
-    print(result2);
+    print(solution("abc1Addfggg4556b", 6));
+    print(solution("abcdef123", 3));
 }
