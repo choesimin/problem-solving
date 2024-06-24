@@ -41,15 +41,29 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
 int solution(vector<int> array)
 {
     int answer = 0;
+    for (int numbers : array)
+    {
+        for (char number : to_string(numbers))
+        {
+            if (number == '7')
+            {
+                answer++;
+            }
+        }
+    }
+
     return answer;
 }
 
 int main()
 {
+    cout << solution({7, 77, 17}) << endl;
+    cout << solution({10, 29}) << endl;
 }
