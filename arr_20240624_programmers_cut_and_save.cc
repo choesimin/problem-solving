@@ -48,15 +48,41 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
 vector<string> solution(string my_str, int n)
 {
     vector<string> answer;
+
+    // 0부터 문자열의 길이까지 n씩 증가시키며 반복
+    for (int i = 0; i < my_str.length(); i += n)
+    {
+        // i부터 n개의 문자를 잘라서 vector에 추가
+        answer.push_back(my_str.substr(i, n));
+    }
+
     return answer;
+}
+
+int print(vector<string> result)
+{
+
+    for (string res : result)
+    {
+        cout << res << " ";
+    }
+    cout << endl;
+
+    return 0;
 }
 
 int main()
 {
+    vector<string> result1 = solution("abc1Addfggg4556b", 6);
+    print(result1);
+
+    vector<string> result2 = solution("abcdef123", 3);
+    print(result2);
 }
