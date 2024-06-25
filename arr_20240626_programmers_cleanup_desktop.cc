@@ -117,10 +117,7 @@ using namespace std;
 
 vector<int> solution(vector<string> wallpaper)
 {
-    int top = 0;
-    int bottom = 0;
-    int left = 0;
-    int right = 0;
+    int min_x, min_y, max_x, max_y;
 
     for (int i = 0; i < wallpaper.size(); i++)
     {
@@ -130,21 +127,27 @@ vector<int> solution(vector<string> wallpaper)
             char file = row[j];
             if (file == '#')
             {
-                if (top == 0)
+                if (min_y > i)
                 {
-                    top = i;
-                }                bottom = i;
-
-                if (left == 0)
-                {
-                    left = j;
+                    min_y = i;
                 }
-                right = j;
+                if (min_x > j)
+                {
+                    min_x = j;
+                }
+                if (max_y < i)
+                {
+                    max_y = i + 1;
+                }
+                if (max_x > j)
+                {
+                    max_x = j + 1;
+                }
             }
         }
     }
 
-    return {top, left, bottom, right};
+    return {min_y, min_x, max_y, max_x};
 }
 
 int print(vector<int> result)
