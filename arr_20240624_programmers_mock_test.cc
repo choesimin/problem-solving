@@ -69,11 +69,17 @@ vector<int> solution(vector<int> answers)
     for (int i = 0; i < answers.size(); ++i)
     {
         if (answers[i] == pattern1[i % pattern1.size()])
+        {
             score[0]++;
+        }
         if (answers[i] == pattern2[i % pattern2.size()])
+        {
             score[1]++;
+        }
         if (answers[i] == pattern3[i % pattern3.size()])
+        {
             score[2]++;
+        }
     }
 
     // 최고 점수 구하기
