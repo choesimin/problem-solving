@@ -42,15 +42,40 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
 vector<int> solution(vector<int> array)
 {
-    vector<int> answer;
-    return answer;
+    int max_value = array[0];
+    int max_index = 0;
+
+    for (int i = 1; i < array.size(); i++)
+    {
+        if (array[i] > max_value)
+        {
+            max_value = array[i];
+            max_index = i;
+        }
+    }
+
+    return {max_value, max_index};
+}
+
+int print(vector<int> result)
+{
+    for (int num : result)
+    {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    return 0;
 }
 
 int main()
 {
+    print(solution({1, 8, 3}));
+    print(solution({9, 10, 11, 8}));
 }
