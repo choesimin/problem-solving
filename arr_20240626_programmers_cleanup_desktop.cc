@@ -111,15 +111,57 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
 vector<int> solution(vector<string> wallpaper)
 {
-    vector<int> answer;
-    return answer;
+    int top = 0;
+    int bottom = 0;
+    int left = 0;
+    int right = 0;
+
+    for (int i = 0; i < wallpaper.size(); i++)
+    {
+        string row = wallpaper[i];
+        for (int j = 0; j < row.size(); j++)
+        {
+            char file = row[j];
+            if (file == '#')
+            {
+                if (top == 0)
+                {
+                    top = i;
+                }                bottom = i;
+
+                if (left == 0)
+                {
+                    left = j;
+                }
+                right = j;
+            }
+        }
+    }
+
+    return {top, left, bottom, right};
+}
+
+int print(vector<int> result)
+{
+    for (int num : result)
+    {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    return 0;
 }
 
 int main()
 {
+    print(solution({".#...", "..#..", "...#."}));
+    print(solution({"..........", ".....#....", "......##..", "...##.....", "....#....."}));
+    print(solution({".##...##.", "#..#.#..#", "#...#...#", ".#.....#.", "..#...#..", "...#.#...", "....#...."}));
+    print(solution({"..", "#."}));
 }
