@@ -1,5 +1,5 @@
 /*
-# 모의고사
+# 행렬의 덧셈
 
 <https://school.programmers.co.kr/learn/courses/17584/17584-내일은-코딩테스트-with-파이썬자료구조와-알고리즘의-기초부터-실전까지>
 
@@ -28,15 +28,44 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
 vector<vector<int>> solution(vector<vector<int>> arr1, vector<vector<int>> arr2)
 {
-    vector<vector<int>> answer;
+    int rows = arr1.size();
+    int cols = arr1[0].size();
+    vector<vector<int>> answer(rows, vector<int>(cols, 0));
+
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            answer[i][j] = arr1[i][j] + arr2[i][j];
+        }
+    }
+
     return answer;
+}
+
+int print(vector<vector<int>> result)
+{
+    for (vector<int> row : result)
+    {
+        for (int num : row)
+        {
+            cout << num << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    return 0;
 }
 
 int main()
 {
+    print(solution({{1, 2}, {2, 3}}, {{3, 4}, {5, 6}}));
+    print(solution({{1}, {2}}, {{3}, {4}}));
 }
