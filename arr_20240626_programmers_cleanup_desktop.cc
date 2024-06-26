@@ -117,37 +117,38 @@ using namespace std;
 
 vector<int> solution(vector<string> wallpaper)
 {
-    int min_x, min_y, max_x, max_y;
+    int min_x = 50;
+    int min_y = 50;
+    int max_x = -1;
+    int max_y = -1;
 
     for (int i = 0; i < wallpaper.size(); i++)
     {
-        string row = wallpaper[i];
-        for (int j = 0; j < row.size(); j++)
+        for (int j = 0; j < wallpaper[i].size(); j++)
         {
-            char file = row[j];
-            if (file == '#')
+            if (wallpaper[i][j] == '#')
             {
-                if (min_y > i)
+                if (i < min_y)
                 {
                     min_y = i;
                 }
-                if (min_x > j)
+                if (j < min_x)
                 {
                     min_x = j;
                 }
-                if (max_y < i)
+                if (i > max_y)
                 {
-                    max_y = i + 1;
+                    max_y = i;
                 }
-                if (max_x > j)
+                if (j > max_x)
                 {
-                    max_x = j + 1;
+                    max_x = j;
                 }
             }
         }
     }
 
-    return {min_y, min_x, max_y, max_x};
+    return {min_y, min_x, max_y + 1, max_x + 1};
 }
 
 int print(vector<int> result)
