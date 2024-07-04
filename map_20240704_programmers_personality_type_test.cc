@@ -205,10 +205,41 @@ using namespace std;
 
 string solution(vector<string> survey, vector<int> choices)
 {
-    string answer = "";
-    return answer;
+    unordered_map<char, int> scores = {
+        {'R', 0}, {'T', 0}, {'C', 0}, {'F', 0}, {'J', 0}, {'M', 0}, {'A', 0}, {'N', 0}};
+    vector<int> score_map = {3, 2, 1, 0, 1, 2, 3};
+
+    for (int i = 0; i < survey.size(); ++i)
+    {
+        string question = survey[i];
+        int choice = choices[i];
+
+        if (choice <= 3)
+        {
+            scores[question[0]] += score_map[choice - 1];
+        }
+        else if (choice >= 5)
+        {
+            scores[question[1]] += score_map[choice - 1];
+        }
+    }
+
+    string result = "";
+    result += (scores['R'] >= scores['T']) ? 'R' : 'T';
+    result += (scores['C'] >= scores['F']) ? 'C' : 'F';
+    result += (scores['J'] >= scores['M']) ? 'J' : 'M';
+    result += (scores['A'] >= scores['N']) ? 'A' : 'N';
+
+    return result;
 }
 
 int main()
 {
+    vector<string> survey1 = {"AN", "CF", "MJ", "RT", "NA"};
+    vector<int> choices1 = {5, 3, 2, 7, 5};
+    cout << solution(survey1, choices1) << endl;
+
+    vector<string> survey2 = {"TR", "RT", "TR"};
+    vector<int> choices2 = {7, 1, 3};
+    cout << solution(survey2, choices2) << endl;
 }
