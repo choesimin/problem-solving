@@ -31,13 +31,6 @@
 
 # 입출력 예
 
-| s | result |
-| --- | --- |
-| "banana" | 3 |
-| "abracadabra" | 6 |
-| "aaabbaccccabba" | 3 |
-
-
 | id_pw | db | result |
 | --- | --- | --- |
 | ["meosseugi", "1234"] | [["rardss", "123"], ["yyoom", "1234"], ["meosseugi", "1234"]] | "login" |
