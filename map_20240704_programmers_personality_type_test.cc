@@ -209,7 +209,7 @@ string solution(vector<string> survey, vector<int> choices)
         {'R', 0}, {'T', 0}, {'C', 0}, {'F', 0}, {'J', 0}, {'M', 0}, {'A', 0}, {'N', 0}};
     vector<int> score_map = {3, 2, 1, 0, 1, 2, 3};
 
-    for (int i = 0; i < survey.size(); ++i)
+    for (int i = 0; i < survey.size(); i++)
     {
         string question = survey[i];
         int choice = choices[i];
