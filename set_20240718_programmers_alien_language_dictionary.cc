@@ -65,23 +65,21 @@ using namespace std;
 
 int solution(vector<string> spell, vector<string> dic)
 {
-    // spell의 알파벳들을 하나의 set에 모으기
     set<char> spell_set;
     for (string ch : spell)
     {
         spell_set.insert(ch[0]);
     }
 
-    // dic에 있는 단어들을 확인
     for (string word : dic)
     {
         set<char> word_set(word.begin(), word.end());
         if (spell_set == word_set)
         {
-            return 1; // spell의 알파벳으로 이루어진 단어가 dic에 존재하면 1 반환
+            return 1;
         }
     }
-    return 2; // 존재하지 않으면 2 반환
+    return 2;
 }
 
 int main()
