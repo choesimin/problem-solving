@@ -63,7 +63,6 @@ N과 K가 주어지면 (N, K)-요세푸스 순열을 구하는 프로그램을 �
 
 #include <iostream>
 #include <queue>
-#include <string>
 
 using namespace std;
 
