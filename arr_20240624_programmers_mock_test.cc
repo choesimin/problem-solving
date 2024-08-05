@@ -97,7 +97,7 @@ vector<int> solution(vector<int> answers)
     return answer;
 }
 
-void print(const vector<int> &result)
+void print(vector<int> result)
 {
     for (int num : result)
     {
