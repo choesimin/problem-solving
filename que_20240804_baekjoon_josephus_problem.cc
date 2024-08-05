@@ -69,64 +69,35 @@ using namespace std;
 
 int main()
 {
-    int N;
-    cin >> N;
+    int N, K;
+    cin >> N >> K;
+
     queue<int> que;
-
-    for (int i = 0; i < N; ++i)
+    for (int i = 1; i <= N; ++i)
     {
-        string command;
-        cin >> command;
+        que.push(i);
+    }
 
-        if (command == "push")
+    string result = "<";
+
+    while (!que.empty())
+    {
+        for (int i = 0; i < K - 1; i++)
         {
-            int x;
-            cin >> x;
-            que.push(x);
+            que.push(que.front());
+            que.pop();
         }
-        else if (command == "pop")
+        result += to_string(que.front());
+        que.pop();
+
+        if (!que.empty())
         {
-            if (que.empty())
-            {
-                cout << -1 << endl;
-            }
-            else
-            {
-                cout << que.front() << endl;
-                que.pop();
-            }
-        }
-        else if (command == "size")
-        {
-            cout << que.size() << endl;
-        }
-        else if (command == "empty")
-        {
-            cout << (que.empty() ? 1 : 0) << endl;
-        }
-        else if (command == "front")
-        {
-            if (que.empty())
-            {
-                cout << -1 << endl;
-            }
-            else
-            {
-                cout << que.front() << endl;
-            }
-        }
-        else if (command == "back")
-        {
-            if (que.empty())
-            {
-                cout << -1 << endl;
-            }
-            else
-            {
-                cout << que.back() << endl;
-            }
+            result += ", ";
         }
     }
+
+    result += ">";
+    cout << result << endl;
 
     return 0;
 }
