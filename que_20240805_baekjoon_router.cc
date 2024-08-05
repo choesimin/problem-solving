@@ -1,5 +1,5 @@
 /*
-# Router (서브태스크)
+# Router
 
 - <https://www.acmicpc.net/problem/15828>
 
