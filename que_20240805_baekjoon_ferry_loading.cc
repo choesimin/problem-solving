@@ -1,7 +1,7 @@
 /*
 # 나룻배
 
-- <https://www.acmicpc.net/problem/2065>
+<https://www.acmicpc.net/problem/2065>
 
 | 시간 제한 | 메모리 제한 |
 | --- | --- |

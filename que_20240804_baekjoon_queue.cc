@@ -1,7 +1,7 @@
 /*
 # 큐
 
-- <https://www.acmicpc.net/problem/10828>
+<https://www.acmicpc.net/problem/10828>
 
 | 시간 제한 | 메모리 제한 |
 | --- | --- |

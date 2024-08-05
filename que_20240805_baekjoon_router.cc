@@ -1,7 +1,7 @@
 /*
 # Router
 
-- <https://www.acmicpc.net/problem/15828>
+<https://www.acmicpc.net/problem/15828>
 
 | 시간 제한 | 메모리 제한 |
 | --- | --- |

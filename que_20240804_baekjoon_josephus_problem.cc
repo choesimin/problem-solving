@@ -1,7 +1,7 @@
 /*
 # 요세푸스 문제
 
-- <https://www.acmicpc.net/problem/1158>
+<https://www.acmicpc.net/problem/1158>
 
 | 시간 제한 | 메모리 제한 |
 | --- | --- |
